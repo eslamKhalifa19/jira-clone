@@ -1,0 +1,48 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.heading-primary {
+    display: inline-block;
+    font-size: 5rem;
+
+    // &--main {
+    //     display: block;
+    //     font-size: 6rem;
+    //     font-weight: 400;
+    //     letter-spacing: 3.5rem;
+    // }
+
+    // &--sub {
+    //     display: block;
+    //     font-size: 2rem;
+    //     font-weight: 700;
+    //     letter-spacing: 1.75rem;
+    // }
+}
+
+.heading-secondry {
+    display: inline-block;
+    font-size: 3.5rem;
+}
+
+.heading-tertiary {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+
+// .heading-gradient {
+//     background-image: linear-gradient(to right, $color, $color);
+//     -webkit-background-clip: text;
+//     background-clip: text;
+//     color: transparent;
+// }
+
+
+.paragraph {
+    font-size: 2rem;
+    word-spacing: 0.1rem;
+}

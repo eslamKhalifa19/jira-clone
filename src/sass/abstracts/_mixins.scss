@@ -1,0 +1,95 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+}
+
+// // MEDIA QUERY MANAGER
+
+// // 0    - 320px  : Phone Small
+// // 320  - 375px  : Phone Medium
+// // 375  - 425px  : Phone Large
+// // 425  - 768px  : Tablet
+// // 768  - 1024px : Laptop
+// // 1024 - 1440px : Laptop Large
+// // 1440 - 2560px : Desktop
+// // 2560 -        : Desktop Hell Large
+
+// // $breakpoint argument choices:
+// // - phone-s
+// // - phone-m
+// // - phone-l
+// // - tablet
+// // - laptop
+// // - laptop-l
+// // - desktop
+// // - desktop-l
+
+// // 1em = 16px
+
+
+// @mixin  addMediaQuery($breakpoint) {
+//     @if $breakpoint == phone-s {
+//         @media (max-width: 20em) { @content };         //  320px
+//     }
+
+//     @if $breakpoint == phone-m {
+//         @media (max-width: 23.4375em) { @content };    //  375px
+//     }
+
+//     @if $breakpoint == phone-l {
+//         @media (max-width: 26.5625em) { @content };    //  425px
+//     }
+
+//     @if $breakpoint == tablet {
+//         @media (max-width: 48em) { @content };         //  768px
+//     }
+
+//     @if $breakpoint == laptop {
+//         @media (max-width: 64em) { @content };         //  1024px
+//     }
+
+//     @if $breakpoint == laptop-l {
+//         @media (max-width: 90em) { @content };         //  1440px
+//     }
+
+//     @if $breakpoint == desktop {
+//         @media (max-width: 160em) { @content };        //  2560px
+//     }
+
+//     @if $breakpoint == desktop-l {
+//         @media (min-width: 160em) { @content };        
+//     }
+// }
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content };    //600px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content };     //900px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content };    //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };    //1800
+    }
+}
