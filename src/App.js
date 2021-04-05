@@ -1,9 +1,14 @@
 import React from "react";
+import SideBar from "./SideBar/SideBar";
+import "./sass/main.scss";
 
 function App() {
   return (
-    <div>
-      <h1>Hello World!</h1>
+    <div className="container">
+      <header className="header"></header>
+      <div className="content">
+        <SideBar />
+      </div>
     </div>
   );
 }
