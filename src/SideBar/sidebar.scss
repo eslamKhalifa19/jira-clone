@@ -1,6 +1,7 @@
 @import "../sass/main";
 
 .sidebar {
+    position: relative;
     display: flex;
     flex: 0 0 300px;
     flex-direction: column;
