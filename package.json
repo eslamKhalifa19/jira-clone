@@ -19,9 +19,8 @@
     "format": "prettier --write './**/*.{js,jsx,,scss,css,md,json}' --config ./.prettierrc"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "hooks":{ "pre-commit": "npx lint-staged"}
+
   },
   "lint-staged": {
     "*.{js,jsx}": [
