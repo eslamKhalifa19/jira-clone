@@ -1,5 +1,6 @@
 import React from "react";
 import "./drawernav.scss";
+import { NavLink } from "react-router-dom";
 
 function Drawer() {
   return (
@@ -12,28 +13,28 @@ function Drawer() {
         />
       </li>
       <li className="drawer-nav__item">
-        <a href="#" className="drawer-nav__link">
+        <NavLink to="/search-issue" className="drawer-nav__link">
           <svg className="drawer-nav__icon">
             <use xlinkHref="./img/sprite.svg#icon-search"></use>
           </svg>
           <span>Search Issues</span>
-        </a>
+        </NavLink>
       </li>
       <li className="drawer-nav__item u-flex-grow-1">
-        <a href="#" className="drawer-nav__link">
+        <NavLink to="/create-issue" className="drawer-nav__link">
           <svg className="drawer-nav__icon">
             <use xlinkHref="./img/sprite.svg#icon-plus"></use>
           </svg>
           <span>Create Issue</span>
-        </a>
+        </NavLink>
       </li>
       <li className="drawer-nav__item">
-        <a href="#" className="drawer-nav__link">
+        <NavLink to="/about" className="drawer-nav__link">
           <svg className="drawer-nav__icon">
             <use xlinkHref="./img/sprite.svg#icon-help-circle"></use>
           </svg>
           <span>About</span>
-        </a>
+        </NavLink>
       </li>
     </ul>
   );

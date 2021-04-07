@@ -4,6 +4,8 @@ import "./sass/main.scss";
 import KanbanBoard from "../src/pages/KanbanBoard";
 import ProjectSettings from "../src/pages/ProjectSettings";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import About from "./pages/About";
+import CreateIssue from "./pages/CreateIssue";
 function App() {
   return (
     <Router>
@@ -14,6 +16,8 @@ function App() {
           <Switch>
             <Route exact path="/" component={KanbanBoard} />
             <Route exact path="/project-settings" component={ProjectSettings} />
+            <Route path="/about" component={About} />
+            <Route path="/create-issue" component={CreateIssue} />
             <Route render={() => <h1>404</h1>} />
           </Switch>
         </div>
