@@ -1,0 +1,57 @@
+@import "../sass/abstracts/variables";
+
+.drawer-search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 55rem;
+    height: 100vh;
+    background-color: $color-white;
+    z-index: 120;
+    padding: 2rem 3rem;
+
+    &__background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($color-primary, 0.5);
+        z-index: 110;
+    }
+
+    &__container {
+        position: relative;
+        margin-bottom: 5rem;
+    }
+
+    &__input {
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 2px solid $color-blue--1;
+        border-radius: 3px;
+        padding: 0.8rem 3rem 0.5rem 3rem;
+        width: 100%;
+        font-size: 2rem;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::-webkit-input-placeholder {
+            color: rgba($color-indigo--1, 0.6);
+            font-weight: 500;
+            font-family: "Roboto", sans-serif;
+        }
+    }
+
+    &__input-icon {
+        position: absolute;
+        left: 0;
+        top: 0.8rem;
+        width: 2rem;
+        height: 2rem;
+        fill: $color-indigo--1;
+    }
+}

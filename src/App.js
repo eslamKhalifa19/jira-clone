@@ -1,5 +1,6 @@
 import React from "react";
 import SideBar from "./SideBar/SideBar";
+// import DrawerSearch from "./DrawerSearch/DrawerSearch";
 import "./sass/main.scss";
 import KanbanBoard from "../src/pages/KanbanBoard";
 import ProjectSettings from "../src/pages/ProjectSettings";
@@ -11,6 +12,8 @@ function App() {
     <Router>
       <div className="container">
         <header className="header"></header>
+        {/* Uncomment this component and uncomment the import in order to see it */}
+        {/* <DrawerSearch /> */}
         <div className="content">
           <SideBar />
           <Switch>
