@@ -21,6 +21,11 @@ function DrawerSearch() {
           <h3 className="heading-tertiary">Recent Issues</h3>
         </div>
         <DrawerIssue />
+        <a href="#" className="drawer-search__btn-close">
+          <svg className="drawer-search__close-icon">
+            <use xlinkHref="./img/sprite.svg#icon-clear"></use>
+          </svg>
+        </a>
       </div>
     </div>
   );
