@@ -51,7 +51,7 @@ function DrawerSearch() {
       return result.summary
         .toString()
         .toLowerCase()
-        .includes(searchTerm.trim());
+        .includes(searchTerm.toLowerCase().trim());
     });
 
     setSearchResults(results);
