@@ -1,5 +1,6 @@
 import React from "react";
 import DrawerIssue from "../DrawerIssue/DrawerIssue";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import "./drawer-search.scss";
 
 function DrawerSearch() {
@@ -16,6 +17,7 @@ function DrawerSearch() {
             type="text"
             placeholder="Search issues by summary, description ..."
           />
+          <LoadingSpinner />
         </form>
         <div className="u-margin-bottom-small">
           <h3 className="heading-tertiary">Recent Issues</h3>
