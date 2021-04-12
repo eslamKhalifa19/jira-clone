@@ -24,7 +24,9 @@ body {
 
 .heading-secondry {
     display: inline-block;
-    font-size: 3.5rem;
+    color: $color-primary;
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 .heading-tertiary {
@@ -45,6 +47,7 @@ body {
 
 
 .paragraph {
-    font-size: 2rem;
-    word-spacing: 0.1rem;
+    font-size: 1.5rem;
+    color: $color-primary;
+    font-weight: 500;
 }
