@@ -17,7 +17,7 @@ function SideNav() {
         </NavLink>
       </li>
       <li className="side-nav__item">
-        <NavLink to="/" className="side-nav__link">
+        <NavLink to="/" className="side-nav__link side-nav__link--active">
           <svg className="side-nav__icon">
             <use xlinkHref="../img/sprite.svg#icon-credit-card"></use>
           </svg>

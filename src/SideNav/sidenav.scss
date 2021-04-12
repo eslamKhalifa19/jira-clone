@@ -31,9 +31,27 @@
         padding: 0.7rem;
         position: relative;
         z-index: 10;
-
         display: flex;
         align-items: center;
+        border-radius: 4px;
+    }
+
+    &__link {
+        &--active {
+            background-color: $color-grey--2;
+
+            span {
+                color: $color-blue--1;
+            }
+
+            svg {
+                fill: $color-blue--1;
+            }
+        }
+ 
+        &:hover {
+            background-color: $color-grey--2;
+        }
     }
 
     &__line {
