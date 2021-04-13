@@ -7,6 +7,7 @@ import ProjectSettings from "../src/pages/ProjectSettings";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./pages/About";
 import CreateIssue from "./pages/CreateIssue";
+import PageEroor from "./PageError/PageError";
 function App() {
   return (
     <Router>
@@ -20,7 +21,7 @@ function App() {
             <Route path="/about" component={About} />
             <Route path="/create-issue" component={CreateIssue} />
             <Route path="/search-issue" component={DrawerSearch} />
-            <Route render={() => <h1>404</h1>} />
+            <Route render={() => <PageEroor />} />
           </Switch>
         </div>
       </div>
