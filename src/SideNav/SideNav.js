@@ -1,5 +1,5 @@
 import React from "react";
-import "../sass/main.scss";
+
 import "./sidenav.scss";
 import { NavLink } from "react-router-dom";
 
