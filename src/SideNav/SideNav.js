@@ -17,7 +17,12 @@ function SideNav() {
         </NavLink>
       </li>
       <li className="side-nav__item">
-        <NavLink to="/" className="side-nav__link side-nav__link--active">
+        <NavLink
+          exact
+          to="/"
+          activeClassName="side-nav__link--active"
+          className="side-nav__link"
+        >
           <svg className="side-nav__icon">
             <use xlinkHref="../img/sprite.svg#icon-credit-card"></use>
           </svg>
@@ -25,7 +30,11 @@ function SideNav() {
         </NavLink>
       </li>
       <li className="side-nav__item">
-        <NavLink to="/project-settings" className="side-nav__link">
+        <NavLink
+          to="/project-settings"
+          activeClassName="side-nav__link--active"
+          className="side-nav__link"
+        >
           <svg className="side-nav__icon">
             <use xlinkHref="../img/sprite.svg#icon-settings"></use>
           </svg>
@@ -36,7 +45,11 @@ function SideNav() {
         <div className="side-nav__line">&nbsp;</div>
       </li>
       <li className="side-nav__item">
-        <NavLink to="/releases" className="side-nav__link">
+        <NavLink
+          to="/releases"
+          activeClassName="side-nav__link--active"
+          className="side-nav__link"
+        >
           <svg className="side-nav__icon">
             <use xlinkHref="../img/sprite.svg#icon-truck"></use>
           </svg>
@@ -44,7 +57,11 @@ function SideNav() {
         </NavLink>
       </li>
       <li className="side-nav__item">
-        <NavLink to="/issues" className="side-nav__link">
+        <NavLink
+          to="/issues"
+          activeClassName="side-nav__link--active"
+          className="side-nav__link"
+        >
           <svg className="side-nav__icon">
             <use xlinkHref="img/sprite.svg#icon-server"></use>
           </svg>
@@ -52,7 +69,11 @@ function SideNav() {
         </NavLink>
       </li>
       <li className="side-nav__item">
-        <NavLink to="/pages" className="side-nav__link">
+        <NavLink
+          to="/pages"
+          activeClassName="side-nav__link--active"
+          className="side-nav__link"
+        >
           <svg className="side-nav__icon">
             <use xlinkHref="../img/sprite.svg#icon-file-text"></use>
           </svg>
@@ -60,7 +81,11 @@ function SideNav() {
         </NavLink>
       </li>
       <li className="side-nav__item">
-        <NavLink to="/reports" className="side-nav__link">
+        <NavLink
+          to="/reports"
+          activeClassName="side-nav__link--active"
+          className="side-nav__link"
+        >
           <svg className="side-nav__icon">
             <use xlinkHref="../img/sprite.svg#icon-trending-up"></use>
           </svg>
@@ -68,7 +93,11 @@ function SideNav() {
         </NavLink>
       </li>
       <li className="side-nav__item">
-        <NavLink to="/components" className="side-nav__link">
+        <NavLink
+          to="/components"
+          activeClassName="side-nav__link--active"
+          className="side-nav__link"
+        >
           <svg className="side-nav__icon">
             <use xlinkHref="../img/sprite.svg#icon-package"></use>
           </svg>
