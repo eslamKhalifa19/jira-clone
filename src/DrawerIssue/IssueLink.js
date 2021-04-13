@@ -1,11 +1,12 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const IssueLink = ({ searchResult }) => {
   //console.log(searchResult);
   return (
     <>
       <li className="drawer-issue__item">
-        <a href="#" className="drawer-issue__link">
+        <NavLink to="/issue/:id" className="drawer-issue__link">
           <div className="drawer-issue__checkbox">
             <svg className="drawer-issue__checkbox-icon">
               <use xlinkHref="./img/sprite.svg#icon-check"></use>
@@ -15,7 +16,7 @@ const IssueLink = ({ searchResult }) => {
             <span>{searchResult.summary}</span>
             <span>{searchResult.id}</span>
           </div>
-        </a>
+        </NavLink>
       </li>
     </>
   );

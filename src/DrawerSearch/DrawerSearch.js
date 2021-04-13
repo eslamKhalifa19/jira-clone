@@ -22,6 +22,7 @@ createServer({
 function DrawerSearch() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   let history = useHistory();
 
@@ -37,11 +38,14 @@ function DrawerSearch() {
   useEffect(() => {
     async function fetchResults() {
       try {
+        setLoading(true);
         const response = await fetch("/api/issues");
         const json = await response.json();
         setSearchResults(json.issues);
       } catch (error) {
         throw new Error(error);
+      } finally {
+        setLoading(false);
       }
     }
     fetchResults();
@@ -56,6 +60,8 @@ function DrawerSearch() {
 
     setSearchResults(results);
   }, [searchTerm]);
+
+  if (!searchResults) return <h1>Data not available</h1>;
 
   return (
     <div>
@@ -76,7 +82,7 @@ function DrawerSearch() {
         <div className="u-margin-bottom-small">
           <h3 className="heading-tertiary">Recent Issues</h3>
         </div>
-        <DrawerIssue searchResults={searchResults} />
+        <DrawerIssue searchResults={searchResults} loading={loading} />
         <button onClick={handleClose} className="drawer-search__btn-close">
           <svg className="drawer-search__close-icon">
             <use xlinkHref="./img/sprite.svg#icon-clear"></use>
