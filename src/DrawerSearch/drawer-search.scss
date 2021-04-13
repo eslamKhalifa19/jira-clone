@@ -1,0 +1,80 @@
+@import "../sass/abstracts/variables";
+
+.drawer-search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 55rem;
+    height: 100vh;
+    background-color: $color-white;
+    z-index: 120;
+    padding: 2rem 4rem;
+
+    &__background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($color-primary, 0.5);
+        z-index: 110;
+    }
+
+    &__container {
+        position: relative;
+        margin-bottom: 5rem;
+    }
+
+    &__input {
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 2px solid $color-blue--1;
+        border-radius: 3px;
+        padding: 0.8rem 3rem 0.5rem 3rem;
+        width: 100%;
+        font-size: 2rem;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::-webkit-input-placeholder {
+            color: rgba($color-indigo--1, 0.6);
+            font-weight: 500;
+            font-family: "Roboto", sans-serif;
+        }
+    }
+
+    &__input-icon {
+        position: absolute;
+        left: 0;
+        top: 0.8rem;
+        width: 2rem;
+        height: 2rem;
+        fill: $color-indigo--1;
+    }
+
+    &__btn-close {
+        border: 1px solid $color-grey--2;
+        position: fixed;
+        top: 2rem;
+        left: 52.5rem;
+        background-color: $color-white;
+        box-shadow: 0 1rem 3rem rgba(0,0,0, 0.1);
+        border-radius: 3px;
+        width: 5rem;
+        height: 5rem;
+    }
+
+    &__close-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 3rem;
+        height: 3rem;
+        fill: rgba($color-indigo--1, 0.6);
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,78 @@
+@import "../sass/abstracts/variables";
+
+.drawer-issue {
+    font-size: 1.4rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
+
+    &__link:link,
+    &__link:visited {
+        color: $color-indigo--1;
+        font-weight: 500;
+        text-decoration: none;
+        display: block;
+        padding: 0.5rem 1.2rem;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        transition: all 0.1s ease;
+    }
+
+    &__checkbox {
+        position: relative;
+        background-color: $color-ligt-blue--1;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1.8rem;
+        border-radius: 3px;
+        flex-shrink: 0;
+    }
+
+    &__checkbox-icon {
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        fill: $color-white;
+    }
+
+    &__bookmark {
+        position: relative;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1.8rem;
+        flex-shrink: 0;
+    }
+
+    &__bookmark-icon {
+        position: absolute;
+        width: 2.8rem;
+        height: 2.8rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        fill: $color-green--1;
+    }
+
+    span {
+        display: block;
+        color: $color-indigo--1;
+    }
+
+    &__link:hover {
+        background-color: $color-grey--1;
+    }
+}

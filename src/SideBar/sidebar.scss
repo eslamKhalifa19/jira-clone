@@ -1,0 +1,13 @@
+@import "../sass/abstracts/variables";
+
+.sidebar {
+    position: relative;
+    display: flex;
+    flex: 0 0 300px;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $color-grey--1;
+    height: 100vh;
+    padding: 0 2rem 0 7rem;
+    border-right: 1px solid rgba($color-primary, 0.1);
+}
