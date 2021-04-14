@@ -3,6 +3,7 @@ import DrawerIssue from "../DrawerIssue/DrawerIssue";
 import { createServer } from "miragejs";
 import { v4 as uuidv4 } from "uuid";
 import { useHistory } from "react-router-dom";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 import "./drawer-search.scss";
 const issues = [
@@ -78,11 +79,12 @@ function DrawerSearch() {
             type="text"
             placeholder="Search issues by summary, description ..."
           />
+          {loading ? <LoadingSpinner /> : null}
         </form>
         <div className="u-margin-bottom-small">
           <h3 className="heading-tertiary">Recent Issues</h3>
         </div>
-        <DrawerIssue searchResults={searchResults} loading={loading} />
+        <DrawerIssue searchResults={searchResults} />
         <button onClick={handleClose} className="drawer-search__btn-close">
           <svg className="drawer-search__close-icon">
             <use xlinkHref="./img/sprite.svg#icon-clear"></use>
