@@ -89,7 +89,7 @@ function DrawerSearch() {
             <h3 className="heading-tertiary">Recent Issues</h3>
           ) : null}
         </div>
-        <DrawerIssue searchResults={searchResults} />
+        <DrawerIssue searchResults={searchResults} loading={loading} />
         <button onClick={handleClose} className="drawer-search__btn-close">
           <svg className="drawer-search__close-icon">
             <use xlinkHref="./img/sprite.svg#icon-clear"></use>
