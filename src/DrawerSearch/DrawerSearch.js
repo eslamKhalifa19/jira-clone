@@ -84,7 +84,9 @@ function DrawerSearch() {
           </div>
         </form>
         <div className="u-margin-bottom-small">
-          <h3 className="heading-tertiary">Recent Issues</h3>
+          {searchResults.length ? (
+            <h3 className="heading-tertiary">Recent Issues</h3>
+          ) : null}
         </div>
         <DrawerIssue searchResults={searchResults} />
         <button onClick={handleClose} className="drawer-search__btn-close">
