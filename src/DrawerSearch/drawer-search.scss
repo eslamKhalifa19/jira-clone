@@ -77,4 +77,11 @@
         fill: rgba($color-indigo--1, 0.6);
         cursor: pointer;
     }
+
+    &__loading {
+        position: absolute;
+        top: 0.8rem;
+        right: 0.3rem;
+        width: 2.5rem;
+    }
 }

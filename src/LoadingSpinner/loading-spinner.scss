@@ -2,11 +2,7 @@
 @import "../sass/base/animations";
 
 .loader {
-    position: absolute;
-    top: 0.8rem;
-    right: 0.3rem;
-    margin: 0 auto;
-    width: 2.5rem;
+    position: relative;
 
     &:before {
         content: '';

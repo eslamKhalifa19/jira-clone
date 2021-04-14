@@ -79,7 +79,9 @@ function DrawerSearch() {
             type="text"
             placeholder="Search issues by summary, description ..."
           />
-          {loading ? <LoadingSpinner /> : null}
+          <div className="drawer-search__loading">
+            {loading ? <LoadingSpinner /> : null}
+          </div>
         </form>
         <div className="u-margin-bottom-small">
           <h3 className="heading-tertiary">Recent Issues</h3>
