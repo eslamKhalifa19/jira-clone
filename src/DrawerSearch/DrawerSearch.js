@@ -4,6 +4,7 @@ import { createServer } from "miragejs";
 import { v4 as uuidv4 } from "uuid";
 import { useHistory } from "react-router-dom";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import BackDrop from "../BackDrop/BackDrop";
 
 import "./drawer-search.scss";
 const issues = [
@@ -66,7 +67,7 @@ function DrawerSearch() {
 
   return (
     <div>
-      <div className="drawer-search__background"></div>
+      <BackDrop />
       <div className="drawer-search">
         <form className="drawer-search__container">
           <svg className="drawer-search__input-icon">
