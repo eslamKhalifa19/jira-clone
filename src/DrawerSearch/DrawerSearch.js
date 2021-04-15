@@ -4,6 +4,7 @@ import { createServer } from "miragejs";
 import { v4 as uuidv4 } from "uuid";
 import { useHistory } from "react-router-dom";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import BackDrop from "../BackDrop/BackDrop";
 
 import "./drawer-search.scss";
 const issues = [
@@ -66,7 +67,7 @@ function DrawerSearch() {
 
   return (
     <div>
-      <div className="drawer-search__background"></div>
+      <BackDrop />
       <div className="drawer-search">
         <form className="drawer-search__container">
           <svg className="drawer-search__input-icon">
@@ -79,12 +80,16 @@ function DrawerSearch() {
             type="text"
             placeholder="Search issues by summary, description ..."
           />
-          {loading ? <LoadingSpinner /> : null}
+          <div className="drawer-search__loading">
+            {loading ? <LoadingSpinner /> : null}
+          </div>
         </form>
         <div className="u-margin-bottom-small">
-          <h3 className="heading-tertiary">Recent Issues</h3>
+          {searchResults.length ? (
+            <h3 className="heading-tertiary">Recent Issues</h3>
+          ) : null}
         </div>
-        <DrawerIssue searchResults={searchResults} />
+        <DrawerIssue searchResults={searchResults} loading={loading} />
         <button onClick={handleClose} className="drawer-search__btn-close">
           <svg className="drawer-search__close-icon">
             <use xlinkHref="./img/sprite.svg#icon-clear"></use>

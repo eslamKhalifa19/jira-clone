@@ -2,7 +2,7 @@ import React from "react";
 import "./btn.scss";
 
 function Button({ children }) {
-  return <a className="btn btn--filled-blue ">{children}</a>;
+  return <button className="btn btn--filled-blue ">{children}</button>;
 }
 
 export default Button;
