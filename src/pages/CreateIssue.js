@@ -1,9 +1,10 @@
 import React from "react";
+import FormCreateIssue from "../FormCreateIssue/FormCreateIssue";
 
 function CreateIssue() {
   return (
-    <div>
-      <h1>CreateIssue</h1>
+    <div className="page-form-create-issue">
+      <FormCreateIssue />
     </div>
   );
 }

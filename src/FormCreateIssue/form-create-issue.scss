@@ -1,0 +1,9 @@
+@import "../sass/abstracts/variables";
+
+.form-create-issue {
+    width: 75rem;
+
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}
