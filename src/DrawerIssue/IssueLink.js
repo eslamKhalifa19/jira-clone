@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const IssueLink = ({ searchResult }) => {
-  //console.log(searchResult);
   return (
     <>
       <li className="drawer-issue__item">

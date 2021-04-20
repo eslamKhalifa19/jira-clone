@@ -1,7 +1,7 @@
 import React from "react";
 import "./form-input.scss";
 
-function FormInput({ label, value }) {
+function FormInput({ label, value, onChange, onBlur, id }) {
   return (
     <div>
       <label htmlFor="name" className="form-input__label">
@@ -10,9 +10,11 @@ function FormInput({ label, value }) {
       <input
         type="text"
         className="form-input"
-        id="name"
+        id={id}
         value={value}
         required
+        onChange={onChange}
+        onBlur={onBlur}
       />
     </div>
   );
