@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "./Header/Header";
 import SideBar from "./SideBar/SideBar";
 import DrawerSearch from "./DrawerSearch/DrawerSearch";
 import "./sass/main.scss";
@@ -12,7 +13,7 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <header className="header"></header>
+        <Header />
         <div className="content">
           <SideBar />
           <Switch>
