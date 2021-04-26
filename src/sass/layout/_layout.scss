@@ -1,7 +1,14 @@
 .content {
     display: flex;
+    overflow: hidden;
 }
 
 .app-view {
     flex: 1;
+}
+
+.page-view {
+    width: 100%;
+    height: calc(100vh - 6.1rem);
+    overflow-y: auto;
 }

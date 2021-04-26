@@ -1,11 +1,11 @@
 @import "../sass/abstracts/variables";
 
 .drawer {
-    position: fixed; // sidebar is the parent element
-    top: 7rem;
+    position: absolute; // sidebar is the parent element
+    top: 0;
     left: 0;
     width: 5.4rem;
-    height: 100vh;
+    height: calc(100vh - 6.1rem);
     background-color: $color-blue--1;
     overflow: hidden;
     z-index: 100;

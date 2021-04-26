@@ -16,14 +16,20 @@ function App() {
         <Header />
         <div className="content">
           <SideBar />
-          <Switch>
-            <Route exact path="/" component={KanbanBoard} />
-            <Route exact path="/project-settings" component={ProjectSettings} />
-            <Route path="/about" component={About} />
-            <Route path="/create-issue" component={CreateIssue} />
-            <Route path="/search-issue" component={DrawerSearch} />
-            <Route render={() => <PageEroor />} />
-          </Switch>
+          <div className="page-view">
+            <Switch>
+              <Route exact path="/" component={KanbanBoard} />
+              <Route
+                exact
+                path="/project-settings"
+                component={ProjectSettings}
+              />
+              <Route path="/about" component={About} />
+              <Route path="/create-issue" component={CreateIssue} />
+              <Route path="/search-issue" component={DrawerSearch} />
+              <Route render={() => <PageEroor />} />
+            </Switch>
+          </div>
         </div>
       </div>
     </Router>
