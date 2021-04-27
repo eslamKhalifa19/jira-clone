@@ -7,21 +7,7 @@ import BreadCrumb from "../BreadCrumb/BreadCrumb";
 import "./form-settings.scss";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-
-const projectCategory = [
-  {
-    label: "The Color Red",
-    value: "red",
-  },
-  {
-    label: "The Color Green",
-    value: "green",
-  },
-  {
-    label: "The Color Blue",
-    value: "blue",
-  },
-];
+import { projectCategory } from "../DummyData";
 
 function FormSettings() {
   const formik = useFormik({
