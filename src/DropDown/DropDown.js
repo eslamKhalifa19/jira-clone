@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useEffect, useRef } from "react";
-import { issueType, Priority } from "../DummyData";
 import "./dropdown.scss";
 import DropDownIcon from "./DropDownIcon";
 import DropDownImage from "./DropDownImage";
@@ -19,7 +18,7 @@ function DropDown({ options, label, selected, onSelectedChange }) {
     setSearchTerm(e.target.value);
   };
 
-  useOnClickOutside(ref, () => setOpen(!open));
+  useOnClickOutside(ref, () => setOpen(false));
 
   useEffect(() => {
     const results = options.filter((result) => {
@@ -33,7 +32,7 @@ function DropDown({ options, label, selected, onSelectedChange }) {
   }, [options, searchTerm]);
 
   const handleClose = () => {
-    setSearchTerm("");
+    setOpen(false);
   };
 
   if (!searchResults) return options;
@@ -43,7 +42,7 @@ function DropDown({ options, label, selected, onSelectedChange }) {
       <label htmlFor="label" className="dropdown__label">
         {label}
       </label>
-      <div className="dropdown">
+      <div className="dropdown" ref={ref}>
         <div
           role="button"
           tabIndex={0}
@@ -51,7 +50,7 @@ function DropDown({ options, label, selected, onSelectedChange }) {
           onClick={() => setOpen(!open)}
           onKeyPress={() => setOpen(!open)}
         >
-          {selected === issueType || Priority ? (
+          {selected.icon ? (
             <DropDownIcon icon={selected.icon} color={selected.color} />
           ) : (
             <DropDownImage src={selected.src} />
@@ -63,7 +62,7 @@ function DropDown({ options, label, selected, onSelectedChange }) {
         </div>
 
         {open && (
-          <div className="dropdown__menu " ref={ref}>
+          <div className="dropdown__menu ">
             <input
               type="text"
               className="dropdown__input"
@@ -99,7 +98,7 @@ function DropDown({ options, label, selected, onSelectedChange }) {
                       setOpen(!open);
                     }}
                   >
-                    {options == Priority || issueType ? (
+                    {option.icon ? (
                       <DropDownIcon icon={option.icon} color={option.color} />
                     ) : (
                       <DropDownImage src={option.src} />

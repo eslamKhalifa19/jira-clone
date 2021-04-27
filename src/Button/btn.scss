@@ -1,27 +1,27 @@
 @import "../sass/abstracts/variables";
 
 .btn {
-    &,
-    &:link,
-    &:visited {
-        text-decoration: none;
-        padding: 0.8rem 1.2rem;
-        display: inline-block;
-        border-radius: 4px;
-        transition: all .2s;
-        position: relative;
-        font-size: 1.5rem;
-        font-weight: 600;
-        cursor: pointer;
-        border: none;
-    }
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    padding: 0.8rem 1.2rem;
+    display: inline-block;
+    border-radius: 4px;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+  }
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 
-    &--filled-blue {
-        background-color: $color-blue--1;
-        color: $color-white;
-    }
+  &--filled-blue {
+    background-color: $color-blue--1;
+    color: $color-white;
+  }
 }
