@@ -1,0 +1,11 @@
+@import "../sass/abstracts/variables";
+
+.bread-crumb {
+  font-size: 1.5rem;
+  color: $color-indigo--1;
+  font-weight: 500;
+
+  span {
+    margin: 0 1rem;
+  }
+}

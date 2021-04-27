@@ -1,17 +1,17 @@
 @import "../sass/abstracts/variables";
 
 .drawer {
-    position: fixed; // sidebar is the parent element
-    top: 0;
-    left: 0;
-    width: 5.4rem;
-    height: 100vh;
-    background-color: $color-blue--1;
-    overflow: hidden;
-    z-index: 100;
-    transition: all 0.1s ease-in-out;
+  position: fixed; // sidebar is the parent element
+  top: 0;
+  left: 0;
+  width: 5.4rem;
+  height: 100vh;
+  background-color: $color-blue--1;
+  overflow: hidden;
+  z-index: 100;
+  transition: all 0.1s ease-in-out;
 
-    &:hover {
-        width: 19rem;
-    }
+  &:hover {
+    width: 19rem;
+  }
 }

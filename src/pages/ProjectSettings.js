@@ -1,9 +1,10 @@
 import React from "react";
+import FormSettings from "../FormSettings/FormSettings";
 
 function ProjectSettings() {
   return (
-    <div>
-      <h1>ProjectSettings</h1>
+    <div className="page-project-settings">
+      <FormSettings />
     </div>
   );
 }

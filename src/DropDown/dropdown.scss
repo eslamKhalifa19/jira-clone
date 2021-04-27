@@ -1,0 +1,144 @@
+@import "../sass/abstracts/variables";
+
+.dropdown {
+  position: relative;
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 0.7rem 1rem;
+  border-radius: 2px;
+  background-color: $color-grey--1;
+  border: 1px solid rgba($color-grey--2, 1);
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  transition: all 0.3s;
+
+  &__label {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: $color-indigo--1;
+    display: block;
+    margin-bottom: 0.7rem;
+    transition: all 0.3s;
+  }
+
+  &__bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon-bar {
+    position: absolute;
+    right: 0;
+    width: 2rem;
+    height: 2rem;
+    fill: $color-indigo--1;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
+    width: 100%;
+    background-color: $color-white;
+    box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.1);
+    z-index: 5;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 0.7rem 1.3rem;
+    background-color: $color-white;
+    border: none;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon-close {
+    position: absolute;
+    right: 0.8rem;
+    top: 0.6rem;
+    width: 2rem;
+    height: 2rem;
+    fill: $color-indigo--1;
+  }
+
+  &__option {
+    padding: 1rem 1.3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba($color-ligt-blue--1, 0.7);
+    }
+  }
+
+  &__shape {
+    width: 1.9rem;
+    height: 1.9rem;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+    }
+  }
+
+  &__img {
+    height: 100%;
+  }
+
+  &__checkbox {
+    position: relative;
+    background-color: $color-ligt-blue--1;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-right: 0.8rem;
+    border-radius: 1px;
+    flex-shrink: 0;
+  }
+
+  &__checkbox-icon {
+    position: absolute;
+    width: 1.4rem;
+    height: 1.4rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: $color-white;
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.8rem;
+
+    &--red {
+      fill: $color-red--1;
+    }
+
+    &--orange {
+      fill: $color-orange--1;
+    }
+
+    &--green {
+      fill: $color-green--1;
+    }
+  }
+
+  &:hover {
+    background-color: $color-grey--2;
+  }
+}
