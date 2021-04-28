@@ -120,10 +120,12 @@ function FormCreateIssue() {
           />
         </div>
         <div className="u-margin-top-medium">
-          <Button type="submit">Create Issue</Button>
-        </div>
-        <div className="u-margin-top-medium">
-          <Button type="reset"> Cancel</Button>
+          <div className="u-flex-end">
+            <div className="u-margin-right-small">
+              <Button type="submit">Create Issue</Button>
+            </div>
+            <Button type="reset"> Cancel</Button>
+          </div>
         </div>
       </form>
     </>
