@@ -32,7 +32,7 @@ function DropDown({ options, label, selected, onSelectedChange }) {
   }, [options, searchTerm]);
 
   const handleClose = () => {
-    setOpen(false);
+    setSearchTerm("");
   };
 
   if (!searchResults) return options;
