@@ -4,12 +4,11 @@ import "./dropdown.scss";
 import DropDownIcon from "./DropDownIcon";
 import DropDownImage from "./DropDownImage";
 import { useOnClickOutside } from "../hooks/useOnClickOutside";
-
+import DropDownItem from "./DropDownItem";
 function DropDown({ options, label, selected, onSelectedChange }) {
   const ref = useRef();
 
   const [open, setOpen] = useState(false);
-
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
@@ -84,27 +83,13 @@ function DropDown({ options, label, selected, onSelectedChange }) {
                   return null;
                 }
                 return (
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    className="dropdown__option"
+                  <DropDownItem
                     key={option.value}
-                    onClick={() => {
-                      onSelectedChange(option);
-                      setOpen(!open);
-                    }}
-                    onKeyPress={() => {
-                      onSelectedChange(option);
-                      setOpen(!open);
-                    }}
-                  >
-                    {option.icon ? (
-                      <DropDownIcon icon={option.icon} color={option.color} />
-                    ) : (
-                      <DropDownImage src={option.src} />
-                    )}
-                    {option.label}
-                  </div>
+                    option={option}
+                    setOpen={setOpen}
+                    open={open}
+                    onSelectedChange={onSelectedChange}
+                  />
                 );
               })}
             </div>
