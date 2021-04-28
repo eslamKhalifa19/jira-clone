@@ -69,7 +69,7 @@ function FormCreateIssue() {
             onBlur={formik.handleBlur}
           />
           {formik.touched.name && formik.errors.name ? (
-            <div>{formik.errors.name}</div>
+            <div className="form-create-issue__error">{formik.errors.name}</div>
           ) : null}
         </div>
         <div className="form-create-issue__group">
@@ -82,7 +82,9 @@ function FormCreateIssue() {
             onBlur={formik.handleBlur}
           />
           {formik.touched.description && formik.errors.description ? (
-            <div>{formik.errors.description}</div>
+            <div className="form-create-issue__error">
+              {formik.errors.description}
+            </div>
           ) : null}
         </div>
         <div className="form-create-issue__group">

@@ -54,7 +54,7 @@ function FormSettings() {
           onBlur={formik.handleBlur}
         />
         {formik.touched.name && formik.errors.name ? (
-          <div>{formik.errors.name}</div>
+          <div className="form-settings__error">{formik.errors.name}</div>
         ) : null}
       </div>
       <div className="form-settings__group">
@@ -67,7 +67,7 @@ function FormSettings() {
           onBlur={formik.handleBlur}
         />
         {formik.touched.url && formik.errors.url ? (
-          <div>{formik.errors.url}</div>
+          <div className="form-settings__error">{formik.errors.url}</div>
         ) : null}
       </div>
       <div className="form-settings__group">
@@ -80,7 +80,9 @@ function FormSettings() {
           onBlur={formik.handleBlur}
         />
         {formik.touched.description && formik.errors.description ? (
-          <div>{formik.errors.description}</div>
+          <div className="form-settings__error">
+            {formik.errors.description}
+          </div>
         ) : null}
       </div>
       <div className="form-settings__group">
