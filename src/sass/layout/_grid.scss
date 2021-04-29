@@ -77,3 +77,21 @@
     );
   }
 }
+
+.board-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  .board-col {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: $color-grey--1;
+    padding: 0.8rem;
+    line-break: normal;
+    min-width: 10rem;
+    min-height: 30rem;
+    border-radius: 3px;
+  }
+}
