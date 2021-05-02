@@ -1,0 +1,110 @@
+@import "../sass/abstracts/variables";
+
+.kanban-card {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-white;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0.1rem 0.2rem rgba(0,0,0, 0.1);
+
+    &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+
+    &__title {
+        font-size: 1.4rem;
+        color: $color-indigo--1;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+
+    &__issue-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__issue-type {
+        display: flex;
+        align-items: center;
+    }
+
+    &__checkbox {
+        position: relative;
+        background-color: $color-ligt-blue--1;
+        width: 1.4rem;
+        height: 1.4rem;
+        margin-right: 0.8rem;
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    &__checkbox-icon {
+        position: absolute;
+        width: 1.4rem;
+        height: 1.4rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        fill: $color-white;
+    }
+
+    &__icon-arrow {
+        width: 2rem;
+        height: 2rem;
+
+        &--orange {
+            fill: $color-orange--1;
+        }
+
+        &--red {
+            fill: $color-red--1;
+        }
+
+        &--green {
+            fill: $color-green--1;
+        }
+    }
+
+    &__icon-bookmark {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.8rem;
+        fill: $color-green--1;
+    }
+
+    &__assignees {
+        display: flex;
+        align-items: center;
+    }
+
+    &__shape {
+        width: 2.6rem;
+        height: 2.6rem;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+        border: 2px solid $color-white;
+    
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+          -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+          -webkit-shape-outside: circle(50% at 50% 50%);
+          shape-outside: circle(50% at 50% 50%);
+        }
+
+        &:not(:last-child) {
+            margin-right: -0.5rem;
+        }
+    }
+
+    &__img {
+        height: 100%;
+    }
+
+    &:hover {
+        background-color: $color-grey--2;
+    }
+}
