@@ -1,4 +1,7 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from "react";
+import { useHistory } from "react-router-dom";
 import "./header-nav.scss";
 import HeaderNavIcon from "./HeaderNavIcon";
 import HeaderNavImage from "./HeaderNavImage";
@@ -28,10 +31,12 @@ const icons = [
   },
 ];
 function HeaderNav() {
+  let history = useHistory();
+
   return (
     <div className="header-nav">
       <div className="header-nav__wrap">
-        <div className="header-nav__logo-box">
+        <div className="header-nav__logo-box" onClick={() => history.push("/")}>
           <img
             className="header-nav__logo"
             src="../img/jira-logo.png"
