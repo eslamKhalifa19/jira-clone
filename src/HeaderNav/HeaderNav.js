@@ -58,7 +58,7 @@ function HeaderNav() {
               return <HeaderNavIcon key={id} icon={icon} />;
             })}
 
-            <HeaderNavImage />
+            <HeaderNavImage src={"../img/gaben.jpg"} />
           </ul>
         </nav>
       </div>
