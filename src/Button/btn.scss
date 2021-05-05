@@ -24,4 +24,14 @@
     background-color: $color-blue--1;
     color: $color-white;
   }
+
+  &--ghost {
+    color: $color-indigo--1;
+    background-color: $color-white;
+    font-weight: 500;
+
+    &:hover {
+      background-color: $color-grey--1;
+    }
+  }
 }

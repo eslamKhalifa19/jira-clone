@@ -1,9 +1,18 @@
 import React from "react";
+import BreadCrumb from "../BreadCrumb/BreadCrumb";
+import BoardFilter from "../BoardFilter/BoardFilter";
 import KanbanCard from "../KanbanCard/KanbanCard";
 
 function KanbanBoard() {
   return (
     <div className="page-kanban-board">
+      <div className="u-margin-bottom-small">
+        <BreadCrumb />
+      </div>
+      <div className="u-margin-bottom-large">
+        <h1 className="heading-primary">Kanban board</h1>
+      </div>
+      <BoardFilter />
       <div className="board-row">
         <div className="board-col">
           <div className="u-padding-xs u-margin-bottom-xxs">

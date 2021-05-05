@@ -1,9 +1,9 @@
 import React from "react";
 import "./btn.scss";
 
-function Button({ children, type }) {
+function Button({ children, type, modifier }) {
   return (
-    <button className="btn btn--filled-blue " type={type}>
+    <button className={`btn btn--${modifier}`} type={type}>
       {children}
     </button>
   );

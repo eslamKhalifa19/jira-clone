@@ -1,0 +1,46 @@
+@import "../sass/abstracts/variables";
+
+.board-filter {
+    display: flex;
+    margin-bottom: 2.3rem;
+    align-items: center;
+
+    &__users {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+    }
+
+    &__shape {
+        width: 3.4rem;
+        height: 3.4rem;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+        border: 2px solid $color-white;
+        border-radius: 50%;
+        cursor: pointer;
+        backface-visibility: hidden;
+        transition: all 0.05s linear;
+    
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+          -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+          -webkit-shape-outside: circle(50% at 50% 50%);
+          shape-outside: circle(50% at 50% 50%);
+        }
+
+        &:not(:last-child) {
+            margin-right: -0.5rem;
+        }
+
+        &:hover {
+            transform: translateY(-0.5rem);
+            z-index: 100;
+        }
+    }
+
+    &__img {
+        height: 100%;
+    }
+}
