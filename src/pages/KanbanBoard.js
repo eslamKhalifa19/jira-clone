@@ -1,7 +1,8 @@
 import React from "react";
 import BreadCrumb from "../BreadCrumb/BreadCrumb";
 import BoardFilter from "../BoardFilter/BoardFilter";
-import KanbanCard from "../KanbanCard/KanbanCard";
+import KanbanColumn from "../KanbanColumn/KanbanColumn";
+import { kanbanCards } from "../DummyData";
 
 function KanbanBoard() {
   return (
@@ -14,33 +15,11 @@ function KanbanBoard() {
       </div>
       <BoardFilter />
       <div className="board-row">
-        <div className="board-col">
-          <div className="u-padding-xs u-margin-bottom-xxs">
-            <p className="paragraph">BACKLOG 4</p>
-          </div>
-          <KanbanCard />
-          <KanbanCard />
-          <KanbanCard />
-          <KanbanCard />
-        </div>
-        <div className="board-col">
-          <div className="u-padding-xs u-margin-bottom-xxs">
-            <p className="paragraph">SELECTED FOR DEVELOPMENT 2</p>
-          </div>
-          <KanbanCard />
-        </div>
-        <div className="board-col">
-          <div className="u-padding-xs u-margin-bottom-xxs">
-            <p className="paragraph">IN PROGRESS 1</p>
-          </div>
-          <KanbanCard />
-        </div>
-        <div className="board-col">
-          <div className="u-padding-xs u-margin-bottom-xxs">
-            <p className="paragraph">DONE 1</p>
-          </div>
-          <KanbanCard />
-        </div>
+        {kanbanCards
+          .filter(({ category }) => category)
+          .map(({ id, category }) => (
+            <KanbanColumn key={id} cardCategory={category} />
+          ))}
       </div>
     </div>
   );

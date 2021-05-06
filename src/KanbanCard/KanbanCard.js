@@ -1,47 +1,22 @@
 import React from "react";
 import "./kanban-card.scss";
+import KanbanCardIcon from "./KanbanCardIcon";
+import KanbanCardImage from "./KanbanCardImage";
 
-function KanbanCard() {
+function KanbanCard({ text, AssigneeImage, icon, color, iconDirection }) {
   return (
     <div className="kanban-card">
-      <p className="kanban-card__title">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      </p>
+      <p className="kanban-card__title">{text}</p>
       <div className="kanban-card__issue-info">
         <div className="kanban-card__issue-type">
-          <div className="kanban-card__checkbox">
-            <svg className="kanban-card__checkbox-icon">
-              <use xlinkHref="./img/sprite.svg#icon-check"></use>
-            </svg>
-          </div>
-          <svg className="kanban-card__icon-bookmark">
-            <use xlinkHref="./img/sprite.svg#icon-bookmark"></use>
-          </svg>
-          <svg className="kanban-card__icon-arrow kanban-card__icon-arrow--orange">
-            <use xlinkHref="./img/sprite.svg#icon-arrow-up"></use>
-          </svg>
-          <svg className="kanban-card__icon-arrow kanban-card__icon-arrow--red">
-            <use xlinkHref="./img/sprite.svg#icon-arrow-up"></use>
-          </svg>
-          <svg className="kanban-card__icon-arrow kanban-card__icon-arrow--green">
-            <use xlinkHref="./img/sprite.svg#icon-arrow-down"></use>
-          </svg>
+          <KanbanCardIcon
+            icon={icon}
+            color={color}
+            iconDirection={iconDirection}
+          />
         </div>
         <div className="kanban-card__assignees">
-          <figure className="kanban-card__shape">
-            <img
-              src="./img/profile-pic--1.jpg"
-              alt="Profile Pic"
-              className="kanban-card__img"
-            />
-          </figure>
-          <figure className="kanban-card__shape">
-            <img
-              src="./img/profile-pic--2.jpg"
-              alt="Profile Pic"
-              className="kanban-card__img"
-            />
-          </figure>
+          <KanbanCardImage src={AssigneeImage} />
         </div>
       </div>
     </div>
