@@ -1,3 +1,45 @@
+export const kanbanCards = [
+  {
+    id: "1",
+    category: "Backlog",
+    text:
+      "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
+    issueIcon: "arrow",
+    issueIconColor: "kanban-card__icon-arrow--red",
+    issueIconDirection: "up",
+    AssigneeImage: "../img/profile-pic--1.jpg",
+  },
+  {
+    id: "2",
+    category: "Selected For Development",
+    text:
+      " 2 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
+    issueIcon: "arrow",
+    issueIconColor: "kanban-card__icon-arrow--green",
+    issueIconDirection: "down",
+    AssigneeImage: "../img/profile-pic--1.jpg",
+  },
+  {
+    id: "3",
+    category: "In Progress",
+
+    text:
+      " 3 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
+    issueIcon: "check",
+    AssigneeImage: "../img/profile-pic--1.jpg",
+  },
+  {
+    id: "4",
+    category: "Done",
+
+    text:
+      " 4 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
+    issueIcon: "bookmark",
+
+    AssigneeImage: "../img/profile-pic--1.jpg",
+  },
+];
+
 export const projectCategory = [
   {
     label: "Software",
