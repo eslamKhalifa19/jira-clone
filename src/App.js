@@ -9,26 +9,30 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./pages/About";
 import CreateIssue from "./pages/CreateIssue";
 import PageEroor from "./PageError/PageError";
+// import Modal from "./Modal/Modal";
 function App() {
   return (
     <Router>
-      <div className="container">
-        <Header />
-        <div className="content">
-          <SideBar />
-          <div className="page-view">
-            <Switch>
-              <Route exact path="/" component={KanbanBoard} />
-              <Route
-                exact
-                path="/project-settings"
-                component={ProjectSettings}
-              />
-              <Route path="/about" component={About} />
-              <Route path="/create-issue" component={CreateIssue} />
-              <Route path="/search-issue" component={DrawerSearch} />
-              <Route render={() => <PageEroor />} />
-            </Switch>
+      <div>
+        {/* <Modal /> */}
+        <div className="container">
+          <Header />
+          <div className="content">
+            <SideBar />
+            <div className="page-view">
+              <Switch>
+                <Route exact path="/" component={KanbanBoard} />
+                <Route
+                  exact
+                  path="/project-settings"
+                  component={ProjectSettings}
+                />
+                <Route path="/about" component={About} />
+                <Route path="/create-issue" component={CreateIssue} />
+                <Route path="/search-issue" component={DrawerSearch} />
+                <Route render={() => <PageEroor />} />
+              </Switch>
+            </div>
           </div>
         </div>
       </div>
