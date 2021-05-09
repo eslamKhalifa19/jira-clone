@@ -2,13 +2,9 @@ import React from "react";
 import { kanbanCards } from "../DummyData";
 import KanbanCard from "../KanbanCard/KanbanCard";
 
-const KanbanColumn = ({ cardCategory }) => {
+const KanbanColumn = () => {
   return (
     <div className="board-col">
-      <div className="u-padding-xs u-margin-bottom-xxs">
-        <p className="paragraph">{cardCategory}</p>
-      </div>
-
       {kanbanCards.map(
         ({
           id,
