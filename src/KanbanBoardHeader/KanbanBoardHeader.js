@@ -1,12 +1,11 @@
 import React from "react";
-import { columns } from "../DummyData";
 
-const KanbanBoardHeader = () => {
+const KanbanBoardHeader = ({ columns }) => {
   return (
     <div className="board-row-header">
-      {columns.map(({ id, name }) => (
+      {columns.map(({ id, name, issues }) => (
         <div key={id} className="board-col-header">
-          {name}
+          {name} - {issues.length}
         </div>
       ))}
     </div>
