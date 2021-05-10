@@ -1,8 +1,15 @@
 import { v4 as uuidv4 } from "uuid";
 
+function generateColumnId() {
+  return `${uuidv4()}_Z1`;
+}
+
+function generateIssueId() {
+  return `${uuidv4()}_Z2`;
+}
 export const issues = [
   {
-    id: uuidv4(),
+    id: generateIssueId(),
     category: "Backlog",
     text:
       "1 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
@@ -12,7 +19,7 @@ export const issues = [
     AssigneeImage: "../img/profile-pic--1.jpg",
   },
   {
-    id: uuidv4(),
+    id: generateIssueId(),
     category: "Backlog",
     text:
       " 2 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
@@ -22,7 +29,7 @@ export const issues = [
     AssigneeImage: "../img/profile-pic--1.jpg",
   },
   {
-    id: uuidv4(),
+    id: generateIssueId(),
     category: "Backlog",
 
     text:
@@ -31,7 +38,7 @@ export const issues = [
     AssigneeImage: "../img/profile-pic--1.jpg",
   },
   {
-    id: uuidv4(),
+    id: generateIssueId(),
     category: "Backlog",
 
     text:
@@ -42,89 +49,28 @@ export const issues = [
   },
 ];
 
-export const columns = [
+export const cardColumns = [
   {
-    id: uuidv4(),
+    id: generateColumnId(),
     name: "Backlog",
     issues: issues,
   },
   {
-    id: uuidv4(),
+    id: generateColumnId(),
     name: "Selected For Development",
     issues: [],
   },
   {
-    id: uuidv4(),
+    id: generateColumnId(),
     name: "In Progress",
     issues: [],
   },
   {
-    id: uuidv4(),
+    id: generateColumnId(),
     name: "Done",
     issues: [],
   },
 ];
-
-// export const KanbanCardCategory = [
-//   {
-//     id: 1,
-//     category: "Backlog",
-//   },
-//   {
-//     id: 2,
-//     category: "Selected for Development",
-//   },
-//   {
-//     id: 3,
-//     category: "In Progress",
-//   },
-//   {
-//     id: 4,
-//     category: "Done",
-//   },
-// ];
-
-// export const kanbanCards = [
-//   {
-//     id: "1",
-//     category: "Backlog",
-//     text:
-//       "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
-//     issueIcon: "arrow",
-//     issueIconColor: "kanban-card__icon-arrow--red",
-//     issueIconDirection: "up",
-//     AssigneeImage: "../img/profile-pic--1.jpg",
-//   },
-//   {
-//     id: "2",
-//     category: "Selected For Development",
-//     text:
-//       " 2 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
-//     issueIcon: "arrow",
-//     issueIconColor: "kanban-card__icon-arrow--green",
-//     issueIconDirection: "down",
-//     AssigneeImage: "../img/profile-pic--1.jpg",
-//   },
-//   {
-//     id: "3",
-//     category: "In Progress",
-
-//     text:
-//       " 3 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
-//     issueIcon: "check",
-//     AssigneeImage: "../img/profile-pic--1.jpg",
-//   },
-//   {
-//     id: "4",
-//     category: "Done",
-
-//     text:
-//       " 4 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
-//     issueIcon: "bookmark",
-
-//     AssigneeImage: "../img/profile-pic--1.jpg",
-//   },
-// ];
 
 export const projectCategory = [
   {
