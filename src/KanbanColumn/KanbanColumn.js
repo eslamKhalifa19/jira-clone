@@ -1,32 +1,48 @@
 import React from "react";
-import { kanbanCards } from "../DummyData";
 import KanbanCard from "../KanbanCard/KanbanCard";
+import { Droppable } from "react-beautiful-dnd";
+// import { cardColumns } from "../DummyData";
 
-const KanbanColumn = () => {
+const KanbanColumn = ({ column }) => {
   return (
-    <div className="board-col">
-      {kanbanCards.map(
-        ({
-          id,
-          text,
-          issueIconColor,
-          issueIcon,
-          AssigneeImage,
-          category,
-          issueIconDirection,
-        }) => (
-          <KanbanCard
-            key={id}
-            text={text}
-            icon={issueIcon}
-            color={issueIconColor}
-            iconDirection={issueIconDirection}
-            AssigneeImage={AssigneeImage}
-            category={category}
-          />
-        )
+    <Droppable droppableId={column.id}>
+      {(provided) => (
+        <div
+          className="board-col"
+          {...provided.droppableProps}
+          ref={provided.innerRef}
+        >
+          {column.issues.map(
+            (
+              {
+                id,
+                text,
+                issueIcon,
+                issueIconColor,
+                issueIconDirection,
+                AssigneeImage,
+                category,
+              },
+              index
+            ) => (
+              <KanbanCard
+                key={id}
+                text={text}
+                icon={issueIcon}
+                color={issueIconColor}
+                iconDirection={issueIconDirection}
+                AssigneeImage={AssigneeImage}
+                id={id}
+                category={category}
+                index={index}
+              />
+            )
+          )}
+
+          {provided.placeholder}
+        </div>
       )}
-    </div>
+    </Droppable>
   );
 };
 
