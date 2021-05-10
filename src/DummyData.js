@@ -1,36 +1,19 @@
-export const KanbanCardCategory = [
-  {
-    id: 1,
-    category: "Backlog",
-  },
-  {
-    id: 2,
-    category: "Selected for Development",
-  },
-  {
-    id: 3,
-    category: "In Progress",
-  },
-  {
-    id: 4,
-    category: "Done",
-  },
-];
+import { v4 as uuidv4 } from "uuid";
 
-export const kanbanCards = [
+export const issues = [
   {
-    id: "1",
+    id: uuidv4(),
     category: "Backlog",
     text:
-      "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
+      "1 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
     issueIcon: "arrow",
     issueIconColor: "kanban-card__icon-arrow--red",
     issueIconDirection: "up",
     AssigneeImage: "../img/profile-pic--1.jpg",
   },
   {
-    id: "2",
-    category: "Selected For Development",
+    id: uuidv4(),
+    category: "Backlog",
     text:
       " 2 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
     issueIcon: "arrow",
@@ -39,8 +22,8 @@ export const kanbanCards = [
     AssigneeImage: "../img/profile-pic--1.jpg",
   },
   {
-    id: "3",
-    category: "In Progress",
+    id: uuidv4(),
+    category: "Backlog",
 
     text:
       " 3 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
@@ -48,8 +31,8 @@ export const kanbanCards = [
     AssigneeImage: "../img/profile-pic--1.jpg",
   },
   {
-    id: "4",
-    category: "Done",
+    id: uuidv4(),
+    category: "Backlog",
 
     text:
       " 4 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
@@ -58,6 +41,90 @@ export const kanbanCards = [
     AssigneeImage: "../img/profile-pic--1.jpg",
   },
 ];
+
+export const columns = [
+  {
+    id: uuidv4(),
+    name: "Backlog",
+    issues: issues,
+  },
+  {
+    id: uuidv4(),
+    name: "Selected For Development",
+    issues: [],
+  },
+  {
+    id: uuidv4(),
+    name: "In Progress",
+    issues: [],
+  },
+  {
+    id: uuidv4(),
+    name: "Done",
+    issues: [],
+  },
+];
+
+// export const KanbanCardCategory = [
+//   {
+//     id: 1,
+//     category: "Backlog",
+//   },
+//   {
+//     id: 2,
+//     category: "Selected for Development",
+//   },
+//   {
+//     id: 3,
+//     category: "In Progress",
+//   },
+//   {
+//     id: 4,
+//     category: "Done",
+//   },
+// ];
+
+// export const kanbanCards = [
+//   {
+//     id: "1",
+//     category: "Backlog",
+//     text:
+//       "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
+//     issueIcon: "arrow",
+//     issueIconColor: "kanban-card__icon-arrow--red",
+//     issueIconDirection: "up",
+//     AssigneeImage: "../img/profile-pic--1.jpg",
+//   },
+//   {
+//     id: "2",
+//     category: "Selected For Development",
+//     text:
+//       " 2 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
+//     issueIcon: "arrow",
+//     issueIconColor: "kanban-card__icon-arrow--green",
+//     issueIconDirection: "down",
+//     AssigneeImage: "../img/profile-pic--1.jpg",
+//   },
+//   {
+//     id: "3",
+//     category: "In Progress",
+
+//     text:
+//       " 3 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
+//     issueIcon: "check",
+//     AssigneeImage: "../img/profile-pic--1.jpg",
+//   },
+//   {
+//     id: "4",
+//     category: "Done",
+
+//     text:
+//       " 4 simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 1",
+//     issueIcon: "bookmark",
+
+//     AssigneeImage: "../img/profile-pic--1.jpg",
+//   },
+// ];
 
 export const projectCategory = [
   {
