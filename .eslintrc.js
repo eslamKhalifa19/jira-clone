@@ -5,10 +5,11 @@ module.exports = {
       version: "detect",
     },
   },
+  parser: "babel-eslint",
 
   parserOptions: {
     sourceType: "module",
-    ecmaVersion: 8,
+    ecmaVersion: 10,
   },
   env: {
     browser: true,
