@@ -1,3 +1,22 @@
+export const KanbanCardCategory = [
+  {
+    id: 1,
+    category: "Backlog",
+  },
+  {
+    id: 2,
+    category: "Selected for Development",
+  },
+  {
+    id: 3,
+    category: "In Progress",
+  },
+  {
+    id: 4,
+    category: "Done",
+  },
+];
+
 export const kanbanCards = [
   {
     id: "1",
