@@ -1,7 +1,7 @@
 import React from "react";
 import "./board-search.scss";
 
-function BoardSearch() {
+function KanbanBoardSearch() {
   return (
     <form className="board-search">
       <svg className="board-search__input-icon">
@@ -12,4 +12,4 @@ function BoardSearch() {
   );
 }
 
-export default BoardSearch;
+export default KanbanBoardSearch;

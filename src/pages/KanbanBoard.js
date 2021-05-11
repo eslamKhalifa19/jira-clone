@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BreadCrumb from "../BreadCrumb/BreadCrumb";
-import BoardFilter from "../BoardFilter/BoardFilter";
+import KanbanBoardFilter from "../KanbanBoardFilter/KanbanBoardFilter";
 import KanbanColumn from "../KanbanColumn/KanbanColumn";
 import { cardColumns } from "../DummyData";
 import KanbanBoardHeader from "../KanbanBoardHeader/KanbanBoardHeader";
@@ -45,7 +45,7 @@ function KanbanBoard() {
       <div className="u-margin-bottom-large">
         <h1 className="heading-primary">Kanban board</h1>
       </div>
-      <BoardFilter />
+      <KanbanBoardFilter />
       <div className="board-row-wrap">
         <KanbanBoardHeader columns={columns} />
         <DragDropContext onDragEnd={handleOnDragEnd}>

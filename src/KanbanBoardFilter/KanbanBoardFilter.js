@@ -1,12 +1,12 @@
 import React from "react";
-import BoardSearch from "../BoardSearch/BoardSearch";
+import KanbanBoardSearch from "../KanbanBoardSearch/KanbanBoardSearch";
 import Button from "../Button/Button";
 import "./board-filter.scss";
 
-function BoardFilter() {
+function KanbanBoardFilter() {
   return (
     <div className="board-filter">
-      <BoardSearch />
+      <KanbanBoardSearch />
       <div className="board-filter__users">
         <figure className="board-filter__shape">
           <img
@@ -31,4 +31,4 @@ function BoardFilter() {
   );
 }
 
-export default BoardFilter;
+export default KanbanBoardFilter;
