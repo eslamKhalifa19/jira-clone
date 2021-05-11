@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BreadCrumb from "../BreadCrumb/BreadCrumb";
 import BoardFilter from "../BoardFilter/BoardFilter";
 import KanbanColumn from "../KanbanColumn/KanbanColumn";
@@ -8,6 +8,17 @@ import { DragDropContext } from "react-beautiful-dnd";
 
 function KanbanBoard() {
   const [columns, setColumns] = useState(cardColumns);
+
+  useEffect(() => {
+    const data = localStorage.getItem("Cards");
+    if (data) {
+      setColumns(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("Cards", JSON.stringify(columns));
+  });
 
   function handleOnDragEnd(result) {
     if (!result) return;
