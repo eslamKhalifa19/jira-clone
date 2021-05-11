@@ -1,9 +1,9 @@
 @import "../sass/abstracts/variables";
 
 .form-settings {
-    width: 75rem;
+  min-width: 50%;
 
-    &__group:not(:last-child) {
-        margin-bottom: 2rem;
-    }
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 }

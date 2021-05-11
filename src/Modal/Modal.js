@@ -1,5 +1,6 @@
 import React from "react";
 import BackDrop from "../BackDrop/BackDrop";
+import FormSettings from "../FormSettings/FormSettings";
 import "./modal.scss";
 
 function Modal() {
@@ -7,7 +8,9 @@ function Modal() {
     <div>
       <BackDrop />
       <div className="modal">
-        <div className="modal__container">Lorem Ipsum</div>
+        <div className="modal__container">
+          <FormSettings />
+        </div>
       </div>
     </div>
   );

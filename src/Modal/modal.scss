@@ -6,7 +6,6 @@
   width: 100vw;
   display: flex;
   justify-content: center;
-  // align-items: center;
   overflow-y: auto;
   padding: 10rem;
   z-index: 120;
@@ -14,7 +13,8 @@
   &__container {
     padding: 3rem;
     background-color: $color-white;
-    min-width: 70rem;
+    width: 100%;
+    max-width: 90rem;
     height: min-content;
   }
 }
