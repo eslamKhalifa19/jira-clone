@@ -1,34 +1,21 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import "./dropdown.scss";
 import DropDownIcon from "./DropDownIcon";
 import DropDownImage from "./DropDownImage";
 import { useOnClickOutside } from "../hooks/useOnClickOutside";
 import DropDownItem from "./DropDownItem";
+import SearchInput from "../SearchInput/SearchInput";
+import { useSearch } from "../hooks/useSearch";
 function DropDown({ options, label, selected, onSelectedChange }) {
   const ref = useRef();
-
+  const { searchResults, handleChange, searchTerm, setSearchTerm } = useSearch(
+    options,
+    "label"
+  );
   const [open, setOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearchTerm(e.target.value);
-  };
 
   useOnClickOutside(ref, () => setOpen(false));
-
-  useEffect(() => {
-    const results = options.filter((result) => {
-      return result.label
-        .toString()
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase().trim());
-    });
-
-    setSearchResults(results);
-  }, [options, searchTerm]);
 
   const handleClose = () => {
     setSearchTerm("");
@@ -62,16 +49,15 @@ function DropDown({ options, label, selected, onSelectedChange }) {
 
         {open && (
           <div className="dropdown__menu ">
-            <input
-              type="text"
-              className="dropdown__input"
-              placeholder="Search"
-              value={searchTerm}
-              onChange={handleChange}
+            <SearchInput
+              handleChange={handleChange}
+              searchTerm={searchTerm}
+              icon={"clear"}
+              handleOnClick={handleClose}
+              searchClassName={"dropdown__input"}
+              svgClassName={"dropdown__icon-close"}
+              placeholder={"Search"}
             />
-            <svg className="dropdown__icon-close" onClick={handleClose}>
-              <use xlinkHref="./img/sprite.svg#icon-clear"></use>
-            </svg>
             <div
               role="button"
               tabIndex={0}

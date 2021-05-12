@@ -3,10 +3,10 @@ import KanbanBoardSearch from "../KanbanBoardSearch/KanbanBoardSearch";
 import Button from "../Button/Button";
 import "./board-filter.scss";
 
-function KanbanBoardFilter() {
+function KanbanBoardFilter({ handleChange, searchTerm }) {
   return (
     <div className="board-filter">
-      <KanbanBoardSearch />
+      <KanbanBoardSearch handleChange={handleChange} searchTerm={searchTerm} />
       <div className="board-filter__users">
         <figure className="board-filter__shape">
           <img

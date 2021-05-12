@@ -5,10 +5,14 @@ import KanbanColumn from "../KanbanColumn/KanbanColumn";
 import { cardColumns } from "../DummyData";
 import KanbanBoardHeader from "../KanbanBoardHeader/KanbanBoardHeader";
 import { DragDropContext } from "react-beautiful-dnd";
+import { useSearch } from "../hooks/useSearch";
 
 function KanbanBoard() {
   const [columns, setColumns] = useState(cardColumns);
-
+  const { searchResults, handleChange, searchTerm } = useSearch(
+    columns,
+    "issues"
+  );
   useEffect(() => {
     const data = localStorage.getItem("Cards");
     if (data) {
@@ -45,12 +49,12 @@ function KanbanBoard() {
       <div className="u-margin-bottom-large">
         <h1 className="heading-primary">Kanban board</h1>
       </div>
-      <KanbanBoardFilter />
+      <KanbanBoardFilter handleChange={handleChange} searchTerm={searchTerm} />
       <div className="board-row-wrap">
         <KanbanBoardHeader columns={columns} />
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <div className="board-row">
-            {columns.map((column) => (
+            {searchResults.map((column) => (
               <KanbanColumn key={column.id} column={column} />
             ))}
           </div>

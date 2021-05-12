@@ -1,13 +1,18 @@
 import React from "react";
+import SearchInput from "../SearchInput/SearchInput";
 import "./board-search.scss";
 
-function KanbanBoardSearch() {
+function KanbanBoardSearch({ handleChange, searchTerm }) {
   return (
     <form className="board-search">
-      <svg className="board-search__input-icon">
-        <use xlinkHref="./img/sprite.svg#icon-search"></use>
-      </svg>
-      <input className="board-search__input" type="text" />
+      <SearchInput
+        handleChange={handleChange}
+        searchTerm={searchTerm}
+        searchClassName={"board-search__input"}
+        svgClassName={"board-search__input-icon"}
+        icon={"search"}
+        placeholder={"Search issues"}
+      />
     </form>
   );
 }
