@@ -8,8 +8,10 @@ function Modal() {
     <div>
       <BackDrop />
       <div className="modal">
-        <div className="modal__container">
-          <FormSettings />
+        <div className="modal__wrap">
+          <div className="modal__container">
+            <FormSettings />
+          </div>
         </div>
       </div>
     </div>
