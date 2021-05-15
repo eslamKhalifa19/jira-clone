@@ -18,6 +18,7 @@ function KanbanBoard() {
       columns.reduce((acc, column) => {
         return [...acc, ...column.issues];
       }, []),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 
@@ -38,7 +39,7 @@ function KanbanBoard() {
         return { ...column, issues: mapColumNameToIssues[column.name] || [] };
       })
     );
-  }, [searchResults]);
+  }, [searchResults, columns]);
 
   useEffect(() => {
     localStorage.setItem("Cards", JSON.stringify(columns));
