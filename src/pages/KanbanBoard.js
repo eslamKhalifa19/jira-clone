@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import BreadCrumb from "../BreadCrumb/BreadCrumb";
 import KanbanBoardFilter from "../KanbanBoardFilter/KanbanBoardFilter";
 import KanbanColumn from "../KanbanColumn/KanbanColumn";
@@ -8,17 +8,37 @@ import { DragDropContext } from "react-beautiful-dnd";
 import { useSearch } from "../hooks/useSearch";
 
 function KanbanBoard() {
-  const [columns, setColumns] = useState(cardColumns);
-  const { searchResults, handleChange, searchTerm } = useSearch(
-    columns,
-    "issues"
+  const [columns, setColumns] = useState(() => {
+    const cards = localStorage.getItem("Cards");
+    return cards ? JSON.parse(cards) : cardColumns;
+  });
+
+  const data = useMemo(
+    () =>
+      columns.reduce((acc, column) => {
+        return [...acc, ...column.issues];
+      }, []),
+    []
   );
+
+  const { searchResults, handleChange, searchTerm } = useSearch(data, "text");
+
   useEffect(() => {
-    const data = localStorage.getItem("Cards");
-    if (data) {
-      setColumns(JSON.parse(data));
-    }
-  }, []);
+    const mapColumNameToIssues = searchResults.reduce((acc, issue) => {
+      if (!acc[issue.category]) {
+        acc[issue.category] = [];
+      }
+      acc[issue.category] = [...acc[issue.category], issue];
+
+      return acc;
+    }, {});
+
+    setColumns(
+      columns.map((column) => {
+        return { ...column, issues: mapColumNameToIssues[column.name] || [] };
+      })
+    );
+  }, [searchResults]);
 
   useEffect(() => {
     localStorage.setItem("Cards", JSON.stringify(columns));
@@ -36,6 +56,7 @@ function KanbanBoard() {
     );
 
     const [reorderedItem] = sourceColumn.issues.splice(result.source.index, 1);
+    reorderedItem.category = destinationColumn.name;
     destinationColumn.issues.splice(result.destination.index, 0, reorderedItem);
 
     setColumns(items);
@@ -54,7 +75,7 @@ function KanbanBoard() {
         <KanbanBoardHeader columns={columns} />
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <div className="board-row">
-            {searchResults.map((column) => (
+            {columns.map((column) => (
               <KanbanColumn key={column.id} column={column} />
             ))}
           </div>
