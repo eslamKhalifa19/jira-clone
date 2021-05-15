@@ -31,9 +31,19 @@
 }
 
 .u-margin-right-small {
+  display: inline-block;
   margin-right: 1.5rem;
+}
+
+.u-padding-xs {
+  padding: 0.3rem;
 }
 
 .u-flex-grow-1 {
   flex-grow: 1;
+}
+
+.u-flex-end {
+  display: flex;
+  justify-content: flex-end;
 }

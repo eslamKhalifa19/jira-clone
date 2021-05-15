@@ -7,6 +7,8 @@ import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import BackDrop from "../BackDrop/BackDrop";
 
 import "./drawer-search.scss";
+import SearchInput from "../SearchInput/SearchInput";
+import { useSearch } from "../hooks/useSearch";
 const issues = [
   { id: uuidv4(), summary: "Walk the dog" },
   { id: uuidv4(), summary: "Take out the trash" },
@@ -22,16 +24,15 @@ createServer({
 });
 
 function DrawerSearch() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const {
+    searchResults,
+    handleChange,
+    searchTerm,
+    setSearchResults,
+  } = useSearch(issues, "summary");
   const [loading, setLoading] = useState(true);
 
   let history = useHistory();
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearchTerm(e.target.value);
-  };
 
   const handleClose = () => {
     history.push("/");
@@ -51,17 +52,7 @@ function DrawerSearch() {
       }
     }
     fetchResults();
-  }, []);
-  useEffect(() => {
-    const results = issues.filter((result) => {
-      return result.summary
-        .toString()
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase().trim());
-    });
-
-    setSearchResults(results);
-  }, [searchTerm]);
+  }, [setSearchResults]);
 
   if (!searchResults) return <h1>Data not available</h1>;
 
@@ -70,15 +61,13 @@ function DrawerSearch() {
       <BackDrop />
       <div className="drawer-search">
         <form className="drawer-search__container">
-          <svg className="drawer-search__input-icon">
-            <use xlinkHref="./img/sprite.svg#icon-search"></use>
-          </svg>
-          <input
-            onChange={handleChange}
-            value={searchTerm}
-            className="drawer-search__input"
-            type="text"
-            placeholder="Search issues by summary, description ..."
+          <SearchInput
+            handleChange={handleChange}
+            searchTerm={searchTerm}
+            icon={"search"}
+            searchClassName={"drawer-search__input"}
+            svgClassName={"drawer-search__input-icon"}
+            placeholder={"Search issues by summary"}
           />
           <div className="drawer-search__loading">
             {loading ? <LoadingSpinner /> : null}
