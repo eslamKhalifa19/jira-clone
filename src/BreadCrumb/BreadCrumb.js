@@ -1,16 +1,16 @@
 import React from "react";
 import "./bread-crumb.scss";
 
-function TextArea() {
+function BreadCrumb({ Tab }) {
   return (
     <div className="bread-crumb">
       Projects
       <span>/</span>
       singularity 1.0
       <span>/</span>
-      Project Details
+      {Tab}
     </div>
   );
 }
 
-export default TextArea;
+export default BreadCrumb;
