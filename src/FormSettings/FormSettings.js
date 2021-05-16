@@ -39,7 +39,7 @@ function FormSettings() {
   return (
     <form onSubmit={formik.handleSubmit} className="form-settings" noValidate>
       <div className="u-margin-bottom-small">
-        <BreadCrumb Tab="Project Details" />
+        <BreadCrumb Tab="Details" />
       </div>
       <div className="u-margin-bottom-large">
         <h1 className="heading-primary">Project Details</h1>

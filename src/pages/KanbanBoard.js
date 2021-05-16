@@ -65,7 +65,7 @@ function KanbanBoard() {
   return (
     <div className="page-kanban-board">
       <div className="u-margin-bottom-small">
-        <BreadCrumb Tab="Kanban Board" />
+        <BreadCrumb Tab="Issues" />
       </div>
       <div className="u-margin-bottom-large">
         <h1 className="heading-primary">Kanban board</h1>
