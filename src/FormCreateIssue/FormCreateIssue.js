@@ -13,6 +13,7 @@ import {
   Reporter,
   Assignees,
 } from "../DummyData";
+import BreadCrumb from "../BreadCrumb/BreadCrumb";
 
 function FormCreateIssue() {
   const formik = useFormik({
@@ -46,6 +47,9 @@ function FormCreateIssue() {
         noValidate
         onReset={formik.handleReset}
       >
+        <div className="u-margin-bottom-small">
+          <BreadCrumb Tab="Create Issue" />
+        </div>
         <div className="u-margin-bottom-large">
           <h1 className="heading-primary">Create Issue</h1>
         </div>
