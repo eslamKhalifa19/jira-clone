@@ -38,9 +38,9 @@ function DropDown({ options, label, selected, onSelectedChange }) {
         >
           {selected.icon ? (
             <DropDownIcon icon={selected.icon} color={selected.color} />
-          ) : (
+          ) : selected.image ? (
             <DropDownImage src={selected.src} />
-          )}
+          ) : null}
           <span>{selected.label}</span>
           <svg className="dropdown__icon-bar">
             <use xlinkHref="./img/sprite.svg#icon-chevron-down"></use>
