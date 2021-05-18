@@ -18,7 +18,7 @@ const DropDownItem = ({ option, setOpen, open, onSelectedChange }) => {
     >
       {option.icon ? (
         <DropDownIcon icon={option.icon} color={option.color} />
-      ) : option.image ? (
+      ) : option.src ? (
         <DropDownImage src={option.src} />
       ) : null}
       {option.label}
