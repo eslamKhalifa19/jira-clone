@@ -1,0 +1,68 @@
+@import "../sass/abstracts/variables";
+
+.header-menu {
+  background-color: $color-white;
+  position: absolute;
+  left: 0;
+  top: 5rem;
+  width: 40rem;
+  padding: 1rem 0;
+  border: 1px solid $color-grey--2;
+  border-radius: 5px;
+  box-shadow: 0 0.2rem 0.8rem rgba($color-grey--2, 1);
+  z-index: 1000;
+
+  &__nav {
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__heading {
+    display: inline-block;
+    color: $color-indigo--1;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    padding: 2rem 2.5rem;
+    font-weight: 700;
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: block;
+    padding: 1.2rem 3rem;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link:hover {
+    background-color: rgba($color-grey--2, 0.2);
+  }
+
+  &__line {
+    display: block;
+    padding: 0.7rem 3rem;
+    border-bottom: 1px solid rgba($color-primary, 0.3);
+    margin-bottom: 3rem;
+  }
+
+  &__icon {
+    width: 2.7rem;
+    height: 2.7rem;
+    margin-right: 2rem;
+    fill: $color-primary;
+    flex-shrink: 0;
+  }
+}
