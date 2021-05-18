@@ -51,7 +51,7 @@ function DropDown({ options, label, selected, onSelectedChange }) {
         >
           {selected.icon ? (
             <DropDownIcon icon={selected.icon} color={selected.color} />
-          ) : selected.image ? (
+          ) : selected.src ? (
             <DropDownImage src={selected.src} />
           ) : null}
           <span>{selected.label}</span>
