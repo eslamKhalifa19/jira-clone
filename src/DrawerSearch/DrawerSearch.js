@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, Fragment } from "react";
 import DrawerIssue from "../DrawerIssue/DrawerIssue";
 import { createServer } from "miragejs";
 import { v4 as uuidv4 } from "uuid";
-import { useHistory } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import BackDrop from "../BackDrop/BackDrop";
+import { useOnClickOutside } from "../hooks/useOnClickOutside";
 
 import "./drawer-search.scss";
 import SearchInput from "../SearchInput/SearchInput";
@@ -24,6 +25,12 @@ createServer({
 });
 
 function DrawerSearch() {
+  const [open, setOpen] = useState(true);
+
+  const ref = useRef();
+
+  useOnClickOutside(ref, () => setOpen(!open));
+
   const {
     searchResults,
     handleChange,
@@ -58,33 +65,39 @@ function DrawerSearch() {
 
   return (
     <div>
-      <BackDrop />
-      <div className="drawer-search">
-        <form className="drawer-search__container">
-          <SearchInput
-            handleChange={handleChange}
-            searchTerm={searchTerm}
-            icon={"search"}
-            searchClassName={"drawer-search__input"}
-            svgClassName={"drawer-search__input-icon"}
-            placeholder={"Search issues by summary"}
-          />
-          <div className="drawer-search__loading">
-            {loading ? <LoadingSpinner /> : null}
+      {open ? (
+        <Fragment>
+          <BackDrop />
+          <div className="drawer-search" ref={ref}>
+            <form className="drawer-search__container">
+              <SearchInput
+                handleChange={handleChange}
+                searchTerm={searchTerm}
+                icon={"search"}
+                searchClassName={"drawer-search__input"}
+                svgClassName={"drawer-search__input-icon"}
+                placeholder={"Search issues by summary"}
+              />
+              <div className="drawer-search__loading">
+                {loading ? <LoadingSpinner /> : null}
+              </div>
+            </form>
+            <div className="u-margin-bottom-small">
+              {searchResults.length ? (
+                <h3 className="heading-tertiary">Recent Issues</h3>
+              ) : null}
+            </div>
+            <DrawerIssue searchResults={searchResults} loading={loading} />
+            <button onClick={handleClose} className="drawer-search__btn-close">
+              <svg className="drawer-search__close-icon">
+                <use xlinkHref="./img/sprite.svg#icon-clear"></use>
+              </svg>
+            </button>
           </div>
-        </form>
-        <div className="u-margin-bottom-small">
-          {searchResults.length ? (
-            <h3 className="heading-tertiary">Recent Issues</h3>
-          ) : null}
-        </div>
-        <DrawerIssue searchResults={searchResults} loading={loading} />
-        <button onClick={handleClose} className="drawer-search__btn-close">
-          <svg className="drawer-search__close-icon">
-            <use xlinkHref="./img/sprite.svg#icon-clear"></use>
-          </svg>
-        </button>
-      </div>
+        </Fragment>
+      ) : (
+        <Redirect to="/" />
+      )}
     </div>
   );
 }
