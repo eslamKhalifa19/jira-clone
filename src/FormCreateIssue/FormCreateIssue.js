@@ -14,8 +14,10 @@ import {
   Assignees,
 } from "../DummyData";
 import BreadCrumb from "../BreadCrumb/BreadCrumb";
+import { useHistory } from "react-router";
 
 function FormCreateIssue() {
+  const history = useHistory();
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -45,7 +47,6 @@ function FormCreateIssue() {
         onSubmit={formik.handleSubmit}
         className="form-create-issue"
         noValidate
-        onReset={formik.handleReset}
       >
         <div className="u-margin-bottom-small">
           <BreadCrumb Tab="Create Issue" />
@@ -126,9 +127,14 @@ function FormCreateIssue() {
         <div className="u-margin-top-medium">
           <div className="u-flex-end">
             <div className="u-margin-right-small">
-              <Button type="submit">Create Issue</Button>
+              <Button type="submit" modifier="filled-blue">
+                Create Issue
+              </Button>
             </div>
-            <Button type="reset"> Cancel</Button>
+            <Button type="button" handleOnClick={() => history.push("/")}>
+              {" "}
+              Cancel
+            </Button>
           </div>
         </div>
       </form>
