@@ -12,7 +12,7 @@ function PageErorr() {
       <p className="paragraph">We cant find the page youre looking for.</p>
       <div className="u-margin-top-medium">
         <Link to="/">
-          <Button>Go To Kanban Board</Button>
+          <Button modifier="filled-blue">Go To Kanban Board</Button>
         </Link>
       </div>
     </div>

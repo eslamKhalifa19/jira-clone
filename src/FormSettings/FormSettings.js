@@ -94,7 +94,9 @@ function FormSettings() {
         />
       </div>
       <div className="u-margin-top-medium">
-        <Button type="submit">Save Changes</Button>
+        <Button type="submit" modifier="filled-blue">
+          Save Changes
+        </Button>
       </div>
     </form>
   );

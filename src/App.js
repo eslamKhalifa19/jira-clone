@@ -8,13 +8,11 @@ import ProjectSettings from "../src/pages/ProjectSettings";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./pages/About";
 import CreateIssue from "./pages/CreateIssue";
-import PageEroor from "./PageError/PageError";
-// import Modal from "./Modal/Modal";
+import PageError from "./PageError/PageError";
 function App() {
   return (
     <Router>
       <div>
-        {/* <Modal /> */}
         <div className="container">
           <Header />
           <div className="content">
@@ -30,7 +28,7 @@ function App() {
                 <Route path="/about" component={About} />
                 <Route path="/create-issue" component={CreateIssue} />
                 <Route path="/search-issue" component={DrawerSearch} />
-                <Route render={() => <PageEroor />} />
+                <Route render={() => <PageError />} />
               </Switch>
             </div>
           </div>
