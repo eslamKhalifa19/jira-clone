@@ -13,6 +13,7 @@ const HeaderNavItem = ({ navHead, headerMenuTitle }) => {
       ref={hoverRef}
       className="header-nav__item"
       onClick={() => setOpen(!open)}
+      onMouseLeave={() => setOpen(false)}
     >
       <NavLink
         to="#"
