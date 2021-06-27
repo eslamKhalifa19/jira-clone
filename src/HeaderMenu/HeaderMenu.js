@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./header-menu.scss";
 import HeaderMenuItem from "./HeaderMenuItem";
-import { useOnClickOutside } from "../hooks/useOnClickOutside";
+// import { useOnClickOutside } from "../hooks/useOnClickOutside";
 
 const MenuData = [
   {
@@ -17,11 +17,15 @@ const MenuData = [
 ];
 
 function HeaderMenu({ children, setOpen }) {
-  const outsideRef = useRef();
+  // const outsideRef = useRef();
 
-  useOnClickOutside(outsideRef, () => setOpen(false));
+  // useOnClickOutside(outsideRef, () => setOpen(false));
   return (
-    <div ref={outsideRef} className="header-menu">
+    <div
+      // ref={outsideRef}
+      onMouseLeave={() => setOpen(false)}
+      className="header-menu"
+    >
       <ul className="header-menu__nav">
         <div className="header-menu__heading">{children}</div>
         {MenuData.map(({ itemText, id, icon }) => {
