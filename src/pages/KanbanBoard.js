@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import BreadCrumb from "../BreadCrumb/BreadCrumb";
 import KanbanBoardFilter from "../KanbanBoardFilter/KanbanBoardFilter";
 import KanbanColumn from "../KanbanColumn/KanbanColumn";
@@ -6,12 +6,10 @@ import { cardColumns } from "../DummyData";
 import KanbanBoardHeader from "../KanbanBoardHeader/KanbanBoardHeader";
 import { DragDropContext } from "react-beautiful-dnd";
 import { useSearch } from "../hooks/useSearch";
+import { useLocalStorageState } from "../hooks/useLocalStorage";
 
 function KanbanBoard() {
-  const [columns, setColumns] = useState(() => {
-    const cards = localStorage.getItem("Cards");
-    return cards ? JSON.parse(cards) : cardColumns;
-  });
+  const [columns, setColumns] = useLocalStorageState("Cards", cardColumns);
 
   const data = useMemo(
     () =>
@@ -39,10 +37,6 @@ function KanbanBoard() {
       })
     );
   }, [searchResults]);
-
-  useEffect(() => {
-    localStorage.setItem("Cards", JSON.stringify(columns));
-  });
 
   function handleOnDragEnd(result) {
     if (!result) return;
