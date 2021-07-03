@@ -10,7 +10,12 @@ import { useLocalStorageState } from "../hooks/useLocalStorage";
 
 function KanbanBoard() {
   const [columns, setColumns] = useLocalStorageState("Cards", cardColumns);
+  let newSearchColumns = [...columns];
 
+  const [searchColumns, setSearchColumns] = useLocalStorageState(
+    "searchCard",
+    newSearchColumns
+  );
   const data = useMemo(
     () =>
       columns.reduce((acc, column) => {
@@ -19,7 +24,6 @@ function KanbanBoard() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
-
   const { searchResults, handleChange, searchTerm } = useSearch(data, "text");
 
   useEffect(() => {
@@ -28,10 +32,17 @@ function KanbanBoard() {
         acc[issue.category] = [];
       }
       acc[issue.category] = [...acc[issue.category], issue];
-
       return acc;
     }, {});
 
+    setSearchColumns(
+      searchColumns.map((searchColumns) => {
+        return {
+          ...searchColumns,
+          issues: mapColumNameToIssues[searchColumns.name] || [],
+        };
+      })
+    );
     setColumns(
       columns.map((column) => {
         return { ...column, issues: mapColumNameToIssues[column.name] || [] };
@@ -56,6 +67,7 @@ function KanbanBoard() {
     destinationColumn.issues.splice(result.destination.index, 0, reorderedItem);
 
     setColumns(items);
+    setSearchColumns(items);
   }
 
   return (
@@ -70,8 +82,8 @@ function KanbanBoard() {
       <div className="board-row-wrap">
         <KanbanBoardHeader columns={columns} />
         <DragDropContext onDragEnd={handleOnDragEnd}>
-          <div className="board-row">
-            {columns.map((column) => (
+          <div className="board-row" style={{ overflow: "auto" }}>
+            {searchColumns.map((column) => (
               <KanbanColumn key={column.id} column={column} />
             ))}
           </div>

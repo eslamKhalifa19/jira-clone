@@ -34,7 +34,6 @@ function DropDown({ options, label, selected, onSelectedChange }) {
           tabIndex={0}
           className="dropdown__bar"
           onClick={() => setOpen(!open)}
-          onKeyPress={() => setOpen(!open)}
         >
           {selected.icon ? (
             <DropDownIcon icon={selected.icon} color={selected.color} />

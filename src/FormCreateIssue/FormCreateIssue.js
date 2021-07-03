@@ -6,23 +6,22 @@ import Button from "../Button/Button";
 import "./form-create-issue.scss";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import {
-  projectCategory,
-  issueType,
-  Priority,
-  Reporter,
-  Assignees,
-} from "../DummyData";
+import { v4 as uuidv4 } from "uuid";
+import { issueType, Priority, Reporter, Assignees } from "../DummyData";
 import BreadCrumb from "../BreadCrumb/BreadCrumb";
 import { useHistory } from "react-router";
+import { useLocalStorageState } from "../hooks/useLocalStorage";
 
 function FormCreateIssue() {
+  // eslint-disable-next-line no-unused-vars
+  const [card, setCard] = useLocalStorageState("Cards");
+
   const history = useHistory();
   const formik = useFormik({
     initialValues: {
       name: "",
       description: "",
-      category: projectCategory[0],
+      category: "Backlog",
       issueType: issueType[0],
       priority: Priority[0],
       reporter: Reporter[0],
@@ -37,8 +36,25 @@ function FormCreateIssue() {
         .max(300, "must be 300 characters or less")
         .required("Required"),
     }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+
+    onSubmit: ({ category, description, priority, assignees, issueType }) => {
+      const new_issue = {
+        id: uuidv4(),
+        category: category,
+        text: description,
+        issueIcon: issueType.icon,
+        issueIconColor: priority.color,
+        issueIconDirection: priority.icon,
+        AssigneeImage: assignees.src,
+      };
+
+      const [backLog, ...rest] = card;
+
+      backLog.issues = [...backLog.issues, new_issue];
+
+      setCard([backLog, ...rest]);
+
+      history.push("/");
     },
   });
   return (

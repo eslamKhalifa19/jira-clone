@@ -1,7 +1,6 @@
 import React from "react";
 import KanbanCard from "../KanbanCard/KanbanCard";
 import { Droppable } from "react-beautiful-dnd";
-// import { cardColumns } from "../DummyData";
 
 const KanbanColumn = ({ column }) => {
   return (
