@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./sass/main.scss";
 import Header from "./Header/Header";
 import SideBar from "./SideBar/SideBar";
-import LoadingSpinner from "./LoadingSpinner/LoadingSpinner";
+import LoadingPage from "./LoadingPage/LoadingPage";
 const PageError = lazy(() => import("./PageError/PageError"));
 const About = lazy(() => import("./pages/About"));
 const ProjectSettings = lazy(() => import("../src/pages/ProjectSettings"));
@@ -12,7 +12,7 @@ const DrawerSearch = lazy(() => import("./DrawerSearch/DrawerSearch"));
 const KanbanBoard = lazy(() => import("../src/pages/KanbanBoard"));
 function App() {
   return (
-    <Suspense fallback={<LoadingSpinner />}>
+    <Suspense fallback={<LoadingPage />}>
       <Router>
         <div>
           <div className="container">
